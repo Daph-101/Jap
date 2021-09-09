@@ -34,20 +34,20 @@ function LoadProdu(PRODUCTS_URL) {
     .catch(error => alert("Hay un error: " + error));
 }
 
-// document.addEventListener("DOMContentLoaded", (e) =>{
-//     let color = document.getElementById("Pdt");
+document.addEventListener("DOMContentLoaded", (e) =>{
+    let color = document.getElementById("Pdt");
 
-//     color.addEventListener("mouseout", (e) =>{
+    color.addEventListener("mouseout", (e) =>{
      
-//         e.target.style.color = "purple";
+        e.target.style.color = "purple";
       
-//         setTimeout(() =>{
-//             e.target.style.color = "";
-//       }, 1500);
+        setTimeout(() =>{
+            e.target.style.color = "";
+      }, 1500);
 
-//     }, false);
+    }, false);
 
-// });
+});
 document.getElementById("filtrar").addEventListener("click", function(){
     PrecioMin = document.getElementById("min.Range").value;
     PrecioMax = document.getElementById("max.Range").value;
