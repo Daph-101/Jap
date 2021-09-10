@@ -104,3 +104,7 @@ document.getElementById("desen").addEventListener("click", function(){
     PRODUCTS_URL = ordenamiento("Desen", PRODUCTS_URL);
     LoadProdu(PRODUCTS_URL);
 })
+
+// let search = document.createElement("input");
+// search.setAttribute("type", "search");
+// document.body.appendChild(search);
