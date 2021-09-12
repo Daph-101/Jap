@@ -7,18 +7,18 @@ document.getElementById('user');
 document.getElementById('password');
 
 function GuardarDatos(user, password){
-    localStorage.setItem("Usuario", user.value); //setItem guarda datos; getItem es para obtener datos
+    localStorage.setItem("Usuario", JSON.stringify({email: email.value})); //setItem guarda datos; getItem es para obtener datos
     localStorage.setItem("Pss", password.value);
 }
 function obtenerDatos (){
-    const Usuario = localStorage.getItem("Usuario");
-    const sesion = sessionStorage.getItem("Usuario");
+    // const Usuario = localStorage.getItem("Usuario");
+    // const sesion = sessionStorage.getItem("Usuario");
     document.getElementById('perfil').innerHTML = Usuario;
     document.getElementById('sesion').innerHTML = sesion;
 }
 document.addEventListener("DOMContentLoaded", function(e){
     e.preventDefault()
-    document.getElementById("log").addEventListener("click", function() { 
+    document.getElementById("log").addEventListener('click', function() { 
 
     console.log('Enviando formulario...');
         

@@ -3,7 +3,10 @@
 //elementos HTML presentes.
 var PrecioMin;
 var PrecioMax;
-
+function verAuto(name){
+    localStorage.setItem('auto', JSON.stringify({autoName: name}));
+    window.location = 'poroduct-info.html'
+}
 function LoadProdu(PRODUCTS_URL) {
 
     document.getElementById("Pdt").innerHTML = " ";
@@ -20,8 +23,10 @@ function LoadProdu(PRODUCTS_URL) {
             let salto = "<br><br>";
             
             let list = " ";
+
             list = `<ul>
                 <ol> <img src=" ` + element.imgSrc + ` " style="width:350px;">` + salto +`</ol>
+                <a href="product-info.html"><button id="info-auto">Ver más</button></a> <br>
                 <ol>` + `<strong>Marca: </strong>` + element.name +`</ol>
                 <ol>` + `<strong>Descripcion: </strong>`+ element.description + `</ol>
                 <ol>` + `<strong>Precio: </strong>` + element.cost + linea +`</ol>
@@ -35,22 +40,13 @@ function LoadProdu(PRODUCTS_URL) {
 }
 
 document.addEventListener("DOMContentLoaded", (e) =>{
-    let color = document.getElementById("Pdt");
 
-    color.addEventListener("mouseout", (e) =>{
-     
-        e.target.style.color = "purple";
-      
-        setTimeout(() =>{
-            e.target.style.color = "";
-      }, 1500);
+    let filtrar= document.getElementById("filtrar")
+    filtrar.addEventListener('click', function(){
 
-    }, false);
-
-});
-document.getElementById("filtrar").addEventListener("click", function(){
     PrecioMin = document.getElementById("min.Range").value;
     PrecioMax = document.getElementById("max.Range").value;
+    
     if((PrecioMin != undefined) && (PrecioMin != " ") && (parseInt(PrecioMin))>= 0){
         PrecioMin = parseInt(PrecioMin);
     }
@@ -64,8 +60,19 @@ document.getElementById("filtrar").addEventListener("click", function(){
         PrecioMin = undefined;
     }
 LoadProdu(PRODUCTS_URL)
+
+    let color = document.getElementById("Pdt");
+    color.addEventListener('mouseout', (e) =>{
+        e.target.style.color = "purple";
+        setTimeout(() =>{
+            e.target.style.color = "";
+        }, 1500);    
+    }, false);
 })
-document.getElementById("limpiar").addEventListener("click", function(){
+
+    let limpiar =document.getElementById("limpiar")
+    limpiar.addEventListener('click', function(){
+
     document.getElementById("min.Range").value = ""; // mediante este evento indicamos que el valor de los input sea vacio
     document.getElementById("max.Range").value = "";
 
@@ -79,7 +86,7 @@ function ordenamiento(orden, lista){
     if(orden === "Asen"){
         array = lista.sort(
             function(a,b){
-                if(a.cost < b.cost){return -1;}
+                if(a.cost < b.cost){ return -1;}
                 if(a.cost > b.cost){ return 1; }
                 return 0;}
         );  
@@ -93,18 +100,21 @@ function ordenamiento(orden, lista){
             }
         )
     }
-
+ordenamiento()
 }
-document.getElementById("asen").addEventListener("click", function(){
+});
+document.getElementById("asen").addEventListener('click', function(){
     PRODUCTS_URL = ordenamiento("Asen", PRODUCTS_URL);
 
     LoadProdu(PRODUCTS_URL);
 })
-document.getElementById("desen").addEventListener("click", function(){
+document.getElementById("desen").addEventListener('click', function(){
     PRODUCTS_URL = ordenamiento("Desen", PRODUCTS_URL);
     LoadProdu(PRODUCTS_URL);
 })
 
 // let search = document.createElement("input");
-// search.setAttribute("type", "search");
+// search.setAttribute('type', "search");
 // document.body.appendChild(search);
+
+

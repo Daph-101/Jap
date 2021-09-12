@@ -25,14 +25,15 @@
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
     </div>
   </nav>
- <!-- <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>-->
+  <div id="DataAuto" class="container p-5">
+    <p style="position: relative; width:auto; top: 0; margin-top: 15px;"></p>
+  </div>
+  <div id="comentarios">
+    <h5 style="position:relative; left:400px;"> Comentarios</h5>
+    <hr>
+    <input type="text" id="text" style="position:relative; left:400px; width: 570px; height: 100px;"></input><br>
+    <button id="enviar" style="position:relative; left:410px;margin-top: 10px; border-radius: 4px; width: 550px; background-color: rgb(255, 255, 255); font-weight: 700; letter-spacing: 1em;">Enviar</button>
+  </div>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -44,9 +45,6 @@
   </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
-      <div>
-        <p id="nombre"></p>
-      </div>
       <div></div>
       <div></div>
       <div></div>
@@ -56,6 +54,12 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/products.js"></script>
+
+  <!-- <script src="C_Onix.json"></script>
+  <script src="Fiat.json"></script>
+  <script src="Peugeot.json"></script>
+  <script src="Suzuki.json"></script> -->
 </body>
 
 </html>
