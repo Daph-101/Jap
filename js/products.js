@@ -1,6 +1,8 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+<<<<<<< HEAD
+=======
 var PrecioMin;
 var PrecioMax;
 function verAuto(name){
@@ -8,16 +10,23 @@ function verAuto(name){
     window.location = 'poroduct-info.html'
 }
 function LoadProdu(PRODUCTS_URL) {
+>>>>>>> 6f5cff41f480b3d7191af49d979e77b85f09efa2
 
+function LoadProdu(PRODUCTS_URL) {
+   
     document.getElementById("Pdt").innerHTML = " ";
     
     fetch(PRODUCTS_URL)
     .then(req => req.json())
     .then(LoadProdu => {
-        
+       
         LoadProdu.forEach(element => {
+<<<<<<< HEAD
+       
+=======
             if(((PrecioMin == undefined) || (PrecioMin != undefined && parseInt(element.cost) >= PrecioMin)) &&// comparamos la el precio que tenemos en el listado de autos sea mayor o igual que el precio que indica el usuario.
             ((PrecioMax == undefined) || (PrecioMax != undefined && parseInt(element.cost) <= PrecioMax))){  
+>>>>>>> 6f5cff41f480b3d7191af49d979e77b85f09efa2
             let linea = "<br><hr><br>";
         
             let salto = "<br><br>";
@@ -31,10 +40,22 @@ function LoadProdu(PRODUCTS_URL) {
                 <ol>` + `<strong>Descripcion: </strong>`+ element.description + `</ol>
                 <ol>` + `<strong>Precio: </strong>` + element.cost + linea +`</ol>
             </ul>`
+<<<<<<< HEAD
+        document.getElementById("Pdt").innerHTML += list;
+        // document.getElementById("abc").addEventListener('click',function() {
+        
+        // abc.sort(element)
+        // console.log(element)
+
+        // })
+        
+    })
+=======
             document.getElementById("Pdt").innerHTML += list;
             }
         })
         
+>>>>>>> 6f5cff41f480b3d7191af49d979e77b85f09efa2
     })
     .catch(error => alert("Hay un error: " + error));
 }
@@ -103,6 +124,17 @@ function ordenamiento(orden, lista){
 ordenamiento()
 }
 });
+<<<<<<< HEAD
+//var arr = [ 'a', 'b', 'Z', 'Aa', 'AA' ];
+//arr.sort(); 
+//console.log(arr)
+
+// function abc(){
+//     element[0].sort();
+//     LoadProdu(element[1]);
+//     console.log(abc)
+// }
+=======
 document.getElementById("asen").addEventListener('click', function(){
     PRODUCTS_URL = ordenamiento("Asen", PRODUCTS_URL);
 
@@ -118,3 +150,4 @@ document.getElementById("desen").addEventListener('click', function(){
 // document.body.appendChild(search);
 
 
+>>>>>>> 6f5cff41f480b3d7191af49d979e77b85f09efa2
