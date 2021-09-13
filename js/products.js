@@ -1,16 +1,17 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-function LoadProdu(PRODUCTS_URL) {
 
+function LoadProdu(PRODUCTS_URL) {
+   
     document.getElementById("Pdt").innerHTML = " ";
     
     fetch(PRODUCTS_URL)
     .then(req => req.json())
     .then(LoadProdu => {
-        
+       
         LoadProdu.forEach(element => {
-        
+       
             let linea = "<br><hr><br>";
         
             let salto = "<br><br>";
@@ -23,7 +24,14 @@ function LoadProdu(PRODUCTS_URL) {
                 <ol>` + `<strong>Precio: </strong>` + element.cost + linea +`</ol>
             </ul>`
         document.getElementById("Pdt").innerHTML += list;
-        })
+        // document.getElementById("abc").addEventListener('click',function() {
+        
+        // abc.sort(element)
+        // console.log(element)
+
+        // })
+        
+    })
     })
     .catch(error => alert("Hay un error: " + error));
 }
@@ -42,3 +50,12 @@ document.addEventListener("DOMContentLoaded", (e) =>{
     }, false);
 
 });
+//var arr = [ 'a', 'b', 'Z', 'Aa', 'AA' ];
+//arr.sort(); 
+//console.log(arr)
+
+// function abc(){
+//     element[0].sort();
+//     LoadProdu(element[1]);
+//     console.log(abc)
+// }

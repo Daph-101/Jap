@@ -26,11 +26,17 @@
     </nav>
     <div id="rangos" class="container p-1" style="position: relative; width:50%; top: 40px; left: 60px; border-radius: 24px; margin-bottom: 10px;">
       Cantidad: 
-        <input type="number" name="number" min="1200" max="15200"> 
-        <label for="" style="margin-left: 15px;">A-Z </label>
-       <input type="text" name="text" style="margin-left: 10px;">
-        <label for="" style="margin-left: 15px;">Z-A </label>     
-        <input type="text" name="text" style="margin-left: 10px;">
+        <input type="number" name="number" min="1200" placeholder="min"> 
+        <input type="number" name="number" max="15200" placeholder="max">
+        <br>
+        
+        <button id="abc" type="text" name="text" style="margin-left: 10px;">
+          <label>A-Z</label>
+        </button>
+
+        <button type="text" name="text" style="margin-left: 10px;">
+          <label>Z-A</label>
+        </button>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
         <input type="text" />
     </div> 
