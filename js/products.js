@@ -83,37 +83,37 @@ LoadProdu(PRODUCTS_URL)
 
     LoadProdu(PRODUCTS_URL);
 })
-function ordenamiento(orden, lista){
-    let array = [];
-    if(orden === "Asen"){
-        array = lista.sort(
-            function(a,b){
-                if(a.cost < b.cost){ return -1;}
-                if(a.cost > b.cost){ return 1; }
-                return 0;}
-        );  
-    }
-    else if(orden === "Desen") {
-        array = lista.sort(
-            function(a,b){
-                if(a.cost < b.cost){return -1;}
-                if(a.cost > b.cost){ return 1; }
-                return 0;
-            }
-        )
-    }
-ordenamiento()
-}
+// function ordenamiento(orden, lista){
+//     let array = [];
+//     if(orden === "Asen"){
+//         array = lista.sort(
+//             function(a,b){
+//                 if(a.cost < b.cost){ return -1;}
+//                 if(a.cost > b.cost){ return 1; }
+//                 return 0;}
+//         );  
+//     }
+//     else if(orden === "Desen") {
+//         array = lista.sort(
+//             function(a,b){
+//                 if(a.cost < b.cost){return -1;}
+//                 if(a.cost > b.cost){ return 1; }
+//                 return 0;
+//             }
+//         )
+//     }
+// ordenamiento()
+// }
 });
-document.getElementById("asen").addEventListener('click', function(){
-    PRODUCTS_URL = ordenamiento("Asen", PRODUCTS_URL);
+// document.getElementById("asen").addEventListener('click', function(){
+//     PRODUCTS_URL = ordenamiento("Asen", PRODUCTS_URL);
 
-    LoadProdu(PRODUCTS_URL);
-})
-document.getElementById("desen").addEventListener('click', function(){
-    PRODUCTS_URL = ordenamiento("Desen", PRODUCTS_URL);
-    LoadProdu(PRODUCTS_URL);
-})
+//     LoadProdu(PRODUCTS_URL);
+// })
+// document.getElementById("desen").addEventListener('click', function(){
+//     PRODUCTS_URL = ordenamiento("Desen", PRODUCTS_URL);
+//     LoadProdu(PRODUCTS_URL);
+// })
 
 // let search = document.createElement("input");
 // search.setAttribute('type', "search");
