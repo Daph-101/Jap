@@ -59,21 +59,21 @@ addEventListener("DOMContentLoaded", function(e) { // evento click que te rediri
   // })
 })
 
-document.addEventListener("DOMContentLoaded", function (e) {
-  let IniSesion = localStorage.getItem('Usuario');
-  let InfoUsuario = document.getElementById("InfoUsuario")
-  let usuario = document.getElementById("usuario");
+// document.addEventListener("DOMContentLoaded", function (e) {
+//   let IniSesion = localStorage.getItem('Usuario');
+//   let InfoUsuario = document.getElementById("InfoUsuario")
+//   let usuario = document.getElementById("usuario");
 
-  if (IniSesion) {
-    IniSesion = JSON.parse(IniSesion);
-    usuario.innerHTML = usuario.innerHTML + 'Usuario logueado: ' + IniSesion.value;
-    InfoUsuario.style = "display: inline-block";
-  }
-  let BotonSalir = document.getElementById("salir")
-  if (BotonSalir) {
-    document.getElementById("salir").addEventListener("click", function () {
-      localStorage.removeItem('Usuario');
-      window.location = 'index.html';
-    })
-  }
-});
+//   if (IniSesion) {
+//     IniSesion = JSON.parse(IniSesion);
+//     usuario.innerHTML = usuario.innerHTML + 'Usuario logueado: ' + IniSesion.value;
+//     InfoUsuario.style = "display: inline-block";
+//   }
+//   let BotonSalir = document.getElementById("salir")
+//   if (BotonSalir) {
+//     document.getElementById("salir").addEventListener("click", function () {
+//       localStorage.removeItem('Usuario');
+//       window.location = 'index.html';
+//     })
+//   }
+// });
