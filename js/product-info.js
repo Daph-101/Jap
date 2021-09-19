@@ -33,14 +33,15 @@ function Comen(){
 
 }
 function NewComments() {
-  var nameField = document.getElementById('nameField').value;
+  var comentary = document.getElementById('comentary').value;
   var result = document.getElementById('result');
   
-  if (nameField.length < 5) {
+  if (comentary.length < 5) {
       result.textContent = 'Tu comentario debe tener más de 5 caracteres';
       //Avisa al usuario si el comentario tiene menos de 10 caracteres
   } else {
-      result.textContent = '' + nameField;
+      result.textContent = '' + comentary  ;
+      
       //Muestra al usuario los datos que se guardaron en la variable "nameField"
   }
 }
@@ -48,7 +49,6 @@ var subButton = document.getElementById('subButton');
 subButton.addEventListener('click', NewComments, false); 
 
 
-var url;
 document.addEventListener("DOMContentLoaded", 
  
     function autos(){
@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded",
           <p><img src=" ` + element.images[0] + ` " style="width:350px;"></p>
           <p><img src=" ` + element.images[1] + ` " style="width:350px;"></p>
           <p><img src=" ` + element.images[2] + ` " style="width:350px;"></p>
+          <a href="products.html">Volver a lista de autos</a>
           </div>`
           
     
@@ -78,18 +79,4 @@ document.addEventListener("DOMContentLoaded",
 });
 
 
-// function MostrarImg(url){
-//  url = URL_C_Onix;
-  
-//   let Img = "";
-//   Img += `
- 
-//     <img src="img/car1.jpg" style="width:200px;">
-//     <img src="img/cat1.jpg" style="width:200px;">
-//     <img src="img/car3.jpg" style="width:200px;"><br><br>
-//     <a href="products.html"><button id="info-auto">Volver a lista de autos</button></a> <br>
- 
-//   `;
-//   document.getElementById("imagenes").innerHTML = Img;
-  
-// }
+

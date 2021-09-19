@@ -5,9 +5,8 @@ var PrecioMin;
 var PrecioMax;
 function verAuto(name){
     localStorage.setItem('auto', JSON.stringify({autoName: name}));
-    window.location = 'poroduct-info.html'
+    window.location = 'poroduct-info.html' // en boton 'ver mas' redirige a 'poroduct-info.html' 
 }
-
 
 function LoadProdu(PRODUCTS_URL) {
    
@@ -41,48 +40,51 @@ function LoadProdu(PRODUCTS_URL) {
     .catch(error => alert("Hay un error: " + error));
 }
 
-// document.addEventListener("DOMContentLoaded", (e) =>{
+document.addEventListener("DOMContentLoaded", (e) =>{
 
-//     let filtrar= document.getElementById("filtrar")
-//     filtrar.addEventListener('click', function(){
+    let filtrar= document.getElementById("filtrar")
+    filtrar.addEventListener('click', function(){
 
-//     PrecioMin = document.getElementById("min.Range").value;
-//     PrecioMax = document.getElementById("max.Range").value;
+    PrecioMin = document.getElementById("min.Range").value;
+    PrecioMax = document.getElementById("max.Range").value;
     
-//     if((PrecioMin != undefined) && (PrecioMin != " ") && (parseInt(PrecioMin))>= 0){
-//         PrecioMin = parseInt(PrecioMin);
-//     }
-//     else {
-//         PrecioMin = undefined;
-//     }
-//     if((PrecioMax != undefined) && (PrecioMax != " ") && (parseInt(PrecioMax))>= 0){
-//         PrecioMax = parseInt(PrecioMax);
-//     }
-//     else {
-//         PrecioMin = undefined;
-//     }
-// LoadProdu(PRODUCTS_URL)
+    if((PrecioMin != undefined) && (PrecioMin != " ") && (parseInt(PrecioMin))>= 0){
+        PrecioMin = parseInt(PrecioMin);
+    }
+    else {
+        PrecioMin = undefined;
+    }
+    if((PrecioMax != undefined) && (PrecioMax != " ") && (parseInt(PrecioMax))>= 0){
+        PrecioMax = parseInt(PrecioMax);
+    }
+    else {
+        PrecioMin = undefined;
+    }
+LoadProdu(PRODUCTS_URL)
 
-//     let color = document.getElementById("Pdt");
-//     color.addEventListener('mouseout', (e) =>{
-//         e.target.style.color = "purple";
-//         setTimeout(() =>{
-//             e.target.style.color = "";
-//         }, 1500);    
-//     }, false);
-// })
+    let color = document.getElementById("Pdt");
+    color.addEventListener('mouseout', (e) =>{
+        e.target.style.color = "purple";
+        setTimeout(() =>{
+            e.target.style.color = "";
+        }, 1500);    
+    }, false);
+})
 
-//     let limpiar =document.getElementById("limpiar")
-//     limpiar.addEventListener('click', function(){
+    let limpiar =document.getElementById("limpiar")
+    limpiar.addEventListener('click', function(){
 
-//     document.getElementById("min.Range").value = ""; // mediante este evento indicamos que el valor de los input sea vacio
-//     document.getElementById("max.Range").value = "";
+    document.getElementById("min.Range").value = ""; // mediante este evento indicamos que el valor de los input sea vacio
+    document.getElementById("max.Range").value = "";
 
-//     PrecioMin = undefined;
-//     PrecioMax = undefined;
+    PrecioMin = undefined;
+    PrecioMax = undefined;
 
-//     LoadProdu(PRODUCTS_URL);
-// })
+    LoadProdu(PRODUCTS_URL);
+})
+
+});
+
 // function ordenamiento(orden, lista){
 //     let array = [];
 //     if(orden === "Asen"){
@@ -100,11 +102,13 @@ function LoadProdu(PRODUCTS_URL) {
 //                 if(a.cost > b.cost){ return 1; }
 //                 return 0;
 //             }
+            
 //         )
+        
 //     }
-// ordenamiento()
+
 // }
-// });
+
 // document.getElementById("asen").addEventListener('click', function(){
 //     PRODUCTS_URL = ordenamiento("Asen", PRODUCTS_URL);
 

@@ -18,10 +18,11 @@
   .checked {
     color: orange;
   }
-  </style>
+</style>
+
 <body onload="Comen()">
 
-  <nav class="site-header sticky-top py-1 bg-dark" >
+  <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
@@ -32,51 +33,46 @@
   </nav>
   <div id="informacion" style="position:relative; left:400px;">
     <div id="imagenes" style="position: relative; bottom:-300px;"> </div>
-</div>
+  </div>
 
 
   <div style="position:relative; bottom:-200px;">
     <p style="position:relative; left:400px;" id="DatosCom"><strong>Comentarios</strong></p>
-
-    <!-- <input type="text" id="text" style="position:relative; left:400px; width: 570px; height: 100px;"></input><br>
-
-    <button id="enviar" style="position:relative; left:410px;margin-top: 10px; border-radius: 4px; width: 550px; background-color: rgb(255, 255, 255); font-weight: 700; letter-spacing: 1em;">Enviar</button> -->
-    <p style="text-align:center" id="result"></p>
-    <div class='wrapper'>
-        <form id='nameForm'>
-        <div class='form-uname'>
-            <label id='nameLable' for='nameField'>Tu comentario:</label>
-            <input id='nameField' type='text' maxlength='25'></input>
-        </div>
-        <div class='form-sub'>
+    <div>
+      <p id="result"></p>
+      <div>
+        <form id='FormTheComentarys'>
+          <div class='form-uname'>
+            <label id='Comen' for='comentary'>Tu comentario</label>
+            <input id='comentary' type='text' maxlength='25'></input>
+          </div>
+          <div class='form-sub'>
             <button id='subButton' type='button'>Publica!</button>
-        </div>
+          </div>
         </form>
-   
+        <footer class="text-muted" style="position: relative; bottom: -400px;">
+          <div class="container">
+            <p class="float-right">
+              <a href="#">Volver arriba</a>
+            </p>
+            <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+            <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+          </div>
+        </footer>
+        <div id="spinner-wrapper">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/product-info.js"></script>
+        <script src="js/products.js"></script>
 
-  <footer class="text-muted" style="position: relative; bottom: -400px;">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
-  <script src="js/products.js"></script>
-
-  <!-- <script src="C_Onix.json"></script>
+        <!-- <script src="C_Onix.json"></script>
   <script src="Fiat.json"></script>
   <script src="Peugeot.json"></script>
   <script src="Suzuki.json"></script> -->

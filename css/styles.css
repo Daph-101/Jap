@@ -139,3 +139,27 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+#comentary{
+  width: 550px; 
+  height: 100px;
+  position: relative;
+  left: 350px;
+}
+#Comen{
+  position: relative;
+  left: 600px;
+  bottom: 80px;
+
+}
+#result{
+  margin: 60px;
+  margin-top: 0px;
+  position: relative;
+  left: 400px;
+}
+#subButton{
+  width: 400px;
+  margin: 30px;
+  position: relative;
+  left: 510px;
+}
