@@ -69,12 +69,14 @@ document.addEventListener("DOMContentLoaded",
           <p><img src=" ` + element.images[1] + ` " style="width:350px;"></p>
           <p><img src=" ` + element.images[2] + ` " style="width:350px;"></p>
           <a href="products.html">Volver a lista de autos</a>
+          <p>` + `<strong> Chevrolet Onix Joy</strong>` + element.relatedProducts[0] + `</p>
+          <p><img src="./img/car1.jpg " style="width:350px;"></p>
           </div>`
           
     
           document.getElementById("informacion").innerHTML += auto;
-        
         });
+        MostrarAutos['relatedProducts'] [0][1]
       })
 });
 
