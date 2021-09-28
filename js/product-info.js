@@ -61,23 +61,62 @@ document.addEventListener("DOMContentLoaded",
           
           let auto = " ";
 
-          auto= `<div>
+          auto= `<div class="masInfo">
           <p>` + `<strong>Marca: </strong>` + element.name +`</p>
-          <p>` + `<strong>Descripcion: </strong>`+ element.description + `</p>
+          <p style="width:1000px">` + `<strong>Descripcion: </strong>` + element.description + ` </p>
           <p>` + `<strong>Precio: </strong> ` + element.currency + " " + element.cost + `</p>
-          <p><img src=" ` + element.images[0] + ` " style="width:350px;"></p>
-          <p><img src=" ` + element.images[1] + ` " style="width:350px;"></p>
-          <p><img src=" ` + element.images[2] + ` " style="width:350px;"></p>
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" src="` + element.images[0] + `"  "alt="First slide">
+            </div>
+            <div class="carousel-item">
+               <img class="d-block w-100" src="` + element.images[1] + `"  "alt="Second slide">
+            </div>
+            <div class="carousel-item">
+               <img class="d-block w-100" src="` + element.images[2] + `"  "alt="Third slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
           <a href="products.html">Volver a lista de autos</a>
-          <p>` + `<strong> Chevrolet Onix Joy</strong>` + element.relatedProducts[0] + `</p>
-          <p><img src="./img/car1.jpg " style="width:350px;"></p>
+          <h5>` + `Productos relacionados `+`</h5>
+          <div class="contain">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="./img/car1.jpg " alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Chevrolet Onix Joy</h5>
+                <p class="card-text">` + element.relatedProducts[0] + `</p>
+                <a href="products.html" class="btn btn-primary">Ir a ver</a>
+              </div>
+            </div>
+          </div>
+          <div class="contain">
+              <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="./img/prod4.jpg " alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Suzuki Celerio</h5>
+                <p class="card-text">` + element.relatedProducts[1]  + `</p>
+                <a href="products.html" class="btn btn-primary">Ir a ver</a>
+              </div>
+            </div>
+          </div>
           </div>`
           
     
           document.getElementById("informacion").innerHTML += auto;
         });
-        MostrarAutos['relatedProducts'] [0][1]
+  
       })
+
 });
 
 

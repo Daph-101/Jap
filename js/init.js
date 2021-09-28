@@ -51,29 +51,3 @@ var getJSONData = function(url){
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-
-addEventListener("DOMContentLoaded", function(e) { // evento click que te redirige a la información del auto 
-  // let click = document.getElementById("info-auto");
-  // click.addEventListener('click', function(){
-  //     window.location='product-info.html';
-  // })
-})
-
-// document.addEventListener("DOMContentLoaded", function (e) {
-//   let IniSesion = localStorage.getItem('Usuario');
-//   let InfoUsuario = document.getElementById("InfoUsuario")
-//   let usuario = document.getElementById("usuario");
-
-//   if (IniSesion) {
-//     IniSesion = JSON.parse(IniSesion);
-//     usuario.innerHTML = usuario.innerHTML + 'Usuario logueado: ' + IniSesion.value;
-//     InfoUsuario.style = "display: inline-block";
-//   }
-//   let BotonSalir = document.getElementById("salir")
-//   if (BotonSalir) {
-//     document.getElementById("salir").addEventListener("click", function () {
-//       localStorage.removeItem('Usuario');
-//       window.location = 'index.html';
-//     })
-//   }
-// });
