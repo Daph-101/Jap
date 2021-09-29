@@ -91,21 +91,21 @@ document.addEventListener("DOMContentLoaded",
           <h5>` + `Productos relacionados `+`</h5>
           <div class="contain">
             <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="./img/car1.jpg " alt="Card image cap">
+              <img class="card-img-top" src="./img/prod2.jpg " alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Chevrolet Onix Joy</h5>
-                <p class="card-text">` + element.relatedProducts[0] + `</p>
-                <a href="products.html" class="btn btn-primary">Ir a ver</a>
+                <h5 class="card-title">Fiat Way</h5>
+                <p class="card-text">` + element.relatedProducts[1] + `</p>
+                <a href="product-info.html" class="btn btn-primary">Ir a ver</a>
               </div>
             </div>
           </div>
           <div class="contain">
               <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="./img/prod4.jpg " alt="Card image cap">
+              <img class="card-img-top" src="./img/peugeot_208_1.jpg " alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Suzuki Celerio</h5>
-                <p class="card-text">` + element.relatedProducts[1]  + `</p>
-                <a href="products.html" class="btn btn-primary">Ir a ver</a>
+                <h5 class="card-title">Peugeot 208</h5>
+                <p class="card-text">` + element.relatedProducts[3] + `</p>
+                <a href="product-info" class="btn btn-primary">Ir a ver</a>
               </div>
             </div>
           </div>
