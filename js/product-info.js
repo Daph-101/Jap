@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded",
               <div class="card-body">
                 <h5 class="card-title">Peugeot 208</h5>
                 <p class="card-text">` + element.relatedProducts[1] + `</p>
-                <a href="product-info" class="btn btn-primary">Ir a ver</a>
+                <a href="product-info.html" class="btn btn-primary">Ir a ver</a>
               </div>
             </div>
           </div>
