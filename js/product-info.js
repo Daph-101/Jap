@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded",
               <img class="card-img-top" src="./img/prod2.jpg " alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Fiat Way</h5>
-                <p class="card-text">` + element.relatedProducts[1] + `</p>
+                <p class="card-text">` + element.relatedProducts[0] + `</p>
                 <a href="product-info.html" class="btn btn-primary">Ir a ver</a>
               </div>
             </div>
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded",
               <img class="card-img-top" src="./img/peugeot_208_1.jpg " alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Peugeot 208</h5>
-                <p class="card-text">` + element.relatedProducts[3] + `</p>
+                <p class="card-text">` + element.relatedProducts[1] + `</p>
                 <a href="product-info" class="btn btn-primary">Ir a ver</a>
               </div>
             </div>
