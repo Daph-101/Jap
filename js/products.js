@@ -3,50 +3,42 @@
 //elementos HTML presentes.
 var PrecioMin;
 var PrecioMax;
-
-function verAuto(){
-    localStorage.setItem('inicioSesion', JSON.stringify({email: user.value}));
-    window.location = 'index.html' // en boton 'ver mas' redirige a 'poroduct-info.html' 
+function verAuto(name){
+    localStorage.setItem('auto', JSON.stringify({autoName: name}));
+    window.location = 'poroduct-info.html' // en boton 'ver mas' redirige a 'poroduct-info.html' 
 }
-document.addEventListener("DOMContentLoaded", function () {
-    
-    document.getElementById("submitBtn").addEventListener("click", 
-    
-        function LoadProdu(PRODUCTS_URL) {
-    
-            document.getElementById("Pdt").innerHTML = " ";
-            
-            fetch(PRODUCTS_URL)
-            .then(req => req.json())
-            .then(LoadProdu => {
-            
-                LoadProdu.forEach(element => {
-                    if(((PrecioMin == undefined) || (PrecioMin != undefined && parseInt(element.cost) >= PrecioMin)) &&// comparamos la el precio que tenemos en el listado de autos sea mayor o igual que el precio que indica el usuario.
-                    ((PrecioMax == undefined) || (PrecioMax != undefined && parseInt(element.cost) <= PrecioMax))){  
-                    let linea = "<br><hr><br>";
-                
-                    let salto = "<br><br>";
-                    
-                    let list = " ";
-        
-                    list = `<ul>
-                        <ol> <img src=" ` + element.imgSrc + ` " style="width:350px;">` + salto +`</ol>
-                        <a href="product-info.html"><button id="info-auto">Ver más</button></a> <br>
-                        <ol>` + `<strong>Marca: </strong>` + element.name +`</ol>
-                        <ol>` + `<strong>Descripcion: </strong>`+ element.description + `</ol>
-                        <ol>` + `<strong>Precio: </strong>` + element.cost + linea +`</ol>
-                    </ul>`
-                    document.getElementById("Pdt").innerHTML += list;
-                    }
-                })
-                
-            })
-            .catch(error => alert("Hay un error: " + error));
-            verAuto()
-        }
 
-    )
-}); 
+function LoadProdu(PRODUCTS_URL) {
+   
+    document.getElementById("Pdt").innerHTML = " ";
+    
+    fetch(PRODUCTS_URL)
+    .then(req => req.json())
+    .then(LoadProdu => {
+       
+        LoadProdu.forEach(element => {
+            if(((PrecioMin == undefined) || (PrecioMin != undefined && parseInt(element.cost) >= PrecioMin)) &&// comparamos la el precio que tenemos en el listado de autos sea mayor o igual que el precio que indica el usuario.
+            ((PrecioMax == undefined) || (PrecioMax != undefined && parseInt(element.cost) <= PrecioMax))){  
+            let linea = "<br><hr><br>";
+        
+            let salto = "<br><br>";
+            
+            let list = " ";
+
+            list = `<ul>
+                <ol> <img src=" ` + element.imgSrc + ` " style="width:350px;">` + salto +`</ol>
+                <a href="product-info.html"><button id="info-auto">Ver más</button></a> <br>
+                <ol>` + `<strong>Marca: </strong>` + element.name +`</ol>
+                <ol>` + `<strong>Descripcion: </strong>`+ element.description + `</ol>
+                <ol>` + `<strong>Precio: </strong>` + element.cost + linea +`</ol>
+            </ul>`
+            document.getElementById("Pdt").innerHTML += list;
+            }
+        })
+        
+    })
+    .catch(error => alert("Hay un error: " + error));
+}
 
 document.addEventListener("DOMContentLoaded", (e) =>{
 
@@ -91,7 +83,7 @@ LoadProdu(PRODUCTS_URL)
     LoadProdu(PRODUCTS_URL);
 })
 
-}) 
+});
 
 // function ordenamiento(orden, lista){
 //     let array = [];

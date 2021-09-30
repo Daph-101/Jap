@@ -3,45 +3,29 @@
 //elementos HTML presentes.
 let Usser = "Hola.com" 
 let Pass = 123456 
-document.getElementById('email');
+document.getElementById('emaill');
 document.getElementById('password');
 
 
-// document.addEventListener("DOMContentLoaded", function(e){
-//     document.getElementById("Btn-Env").addEventListener('click', function(e) { 
+document.addEventListener("DOMContentLoaded", function(e){
+    document.getElementById("Btn-Env").addEventListener('click', function(e) { 
 
-//     console.log('Enviando formulario...');
+    console.log('Enviando formulario...');
         
-//     if(user.value=== Usser && password.value == Pass){
+    if(emaill.value=== Usser && password.value == Pass){
         
-//         localStorage.setItem('Logged', JSON.stringify({ email: Usser.value }));
-//         window.location='inicio.html'
+        localStorage.setItem('Correo', JSON.stringify({ email: emaill.value }));
+        window.location='inicio.html'
 
-//     }else{
-//         alert('Su usuario o contraseña no son válidos');    
-//     }
-//    });
+    }else{
+        alert('Su usuario o contraseña no son válidos');    
+    }
+   });
 
-// });
-
-
-
-
-document.addEventListener("DOMContentLoaded", function (e){
-    document.getElementById("Btn-Env").addEventListener("click", function (e){
-        console.log('Enviando formulario...');
-
-        let Email = document.getElementById("email");
-        if(Usser.value != " " && Pass.value != " "){
-            localStorage.setItem('Logged', JSON.stringify({ email: Email.value }));
-
-            window.location = 'index.html';
-        }else{
-            alert('Su usuario o contraseña no son válidos');    
-        }
-
-    });
 });
+
+
+
 
 
 // function GuardarDatos(user, password){
