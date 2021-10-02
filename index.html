@@ -15,8 +15,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <style>
      body{
-      background-color: rgba(255, 255, 255, 5); 
-      filter: blur(10px);
+      background-color: transparent; 
       color: white;
       font-family: 'Righteous', cursive;
       letter-spacing: 5px;
@@ -46,23 +45,13 @@
       
     }
     input:hover{
-      background-color: #fccccc;
       cursor: pointer;
-    }
-    #log{
-      width: 198px;
-      height: 30px;
-      margin-left: 70px;
-      background-color: #f5f5f5;
-    }
-    #log:hover {
-      background-color: rgba(105, 233, 238, 0.616);
-      color: white;
+      border-bottom: 4px solid #20e2d7;
     }
     div{
       width: 500px;
       height: 560px;
-      background-color: rgba(5, 5, 5, 0.925);
+      background-color: rgba(5, 5, 5, 0.959);
       background-size: contain;
       border-radius: 6px;
       
@@ -77,8 +66,7 @@
       right: 0px;
       top: 0px;
       bottom: 0;   
-      
-      filter: none;
+      box-shadow: 0px 0px 16px rgba(0, 0, 0, 5);
     }
     #Btn-Env{
       width: 408px;
@@ -88,9 +76,14 @@
       margin-top: 20px ;
       margin-left: auto;
       letter-spacing: 5px;
+      background-color: transparent;
+      border: 2px solid #20e2d7;
+      color: white;
     }
-    #Btn-Env:root{
-      
+    #Btn-Env:hover{
+      background-color: #20e2d7;
+      box-shadow: 0 0 10px #20e2d7, 0 0 20px #20e2d7, 0 0 20px #20e2d7;
+      color: black;
     }
   </style>
 </head>
