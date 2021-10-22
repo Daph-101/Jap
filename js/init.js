@@ -52,13 +52,13 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-  let Correeo = localStorage.getItem('Correo');
+  let correeo = localStorage.getItem('Correo');
   let infoUser = document.getElementById("info-user")
   let user = document.getElementById("user");
 
-  if (Correeo) {
-    Correeo = JSON.parse(Correeo);
-    user.innerText = user.innerText + Correeo.email;
+  if (correeo) {
+    correeo = JSON.parse(correeo);
+    user.innerText = user.innerText + correeo.email;
     infoUser.style = "display: inline-block";
   }
 

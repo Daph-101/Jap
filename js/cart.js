@@ -1,16 +1,17 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+
  document.addEventListener("DOMContentLoaded", function(e){
-    
     function Comen(){
 
         fetch(CART_INFO_URL)
         .then(req => req.json())
         .then(art =>{
         console.log(art.articles[0])
+        
         art.articles.forEach(item =>{
-  
+
         let body = "";
         body= `
         <main id="info">
@@ -32,16 +33,16 @@
               </div>
             </div>
           </div>` ;
+        
         document.getElementById("info").innerHTML += body;
-  
+        
         })
-  
         })
         .catch(error => console.log(error))
         }
   
         Comen()
-    
+        
 })   
 
 
