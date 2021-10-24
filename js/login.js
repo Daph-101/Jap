@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         
     if(emaill.value=== Usser && password.value == Pass){
         
-        localStorage.setItem('Correo', JSON.stringify({ nombre: nombre.value, email: emaill.value }));
+        localStorage.setItem('Correo', JSON.stringify({email: emaill.value }));
         window.location='inicio.html'
 
     }else{
