@@ -2,7 +2,8 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-
+  infoUser="";
+  user="";
   document.getElementById("btn-enviar").addEventListener('click', function(){
     let name = document.getElementById("name")
     let age = document.getElementById("age")
@@ -22,6 +23,33 @@ document.addEventListener("DOMContentLoaded", function (e) {
         
   })
 
- 
+  if( document.getElementById("btn-enviar")){
+    
+    document.getElementById("btn-enviar").addEventListener("click", function (){
+    
+    let profile = localStorage.getItem('profile');
+    let datosUsuario = document.getElementById("datosUsuario")
+    let user = document.getElementById("user");
+  
+    if (profile) {
+      profile = JSON.parse(profile);
+      user.innerText = user.innerText + profile.email;
+      datosUsuario.style = "display: inline-block";
+    }
+  
+    if (document.getElementById("btn-editar")) {
+      document.getElementById("btn-editar").addEventListener("click", function () {
+        localStorage.removeItem('profile');
+      })
+    }
+    if (document.getElementById("btn-enviar")) {
+      document.getElementById("btn-enviar").addEventListener("click", function () {
+        document.getElementById('user')="";
+        localStorage.removeItem('Correo');
+        
+      })
+    }
+  });
+}
     
 });

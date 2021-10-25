@@ -25,13 +25,18 @@ function LoadProdu(PRODUCTS_URL) {
             
             let list = " ";
 
-            list = `<ul>
-                <ol> <img src=" ` + element.imgSrc + ` " style="width:350px;">` + salto +`</ol>
-                <a href="product-info.html"><button id="info-auto">Ver más</button></a> <br>
-                <ol>` + `<strong>Marca: </strong>` + element.name +`</ol>
-                <ol>` + `<strong>Descripcion: </strong>`+ element.description + `</ol>
-                <ol>` + `<strong>Precio: </strong>` + element.cost + linea +`</ol>
-            </ul>`
+            list = 
+            `<div class="col-12 col-sm-6 mb-5 col-md-3 " style="width: 18rem;">
+            <div class="card" style="width: 18rem;">
+            <img src=" ` + element.imgSrc + ` " class="card-img-top" style="width: 18rem;">` + salto +`
+                <div class="card-body">  
+                    <a href="product-info.html"><button id="info-auto">Ver más</button></a> <br>
+                    <p class="card-text">` + `<strong>Marca: </strong>` + element.name +`</p>
+                    <p class="card-text">` + `<strong>Descripcion: </strong>`+ element.description + `</p>
+                    <p class="card-text">` + `<strong>Precio: </strong>` + element.cost + `</p>
+                </div>
+            </div>
+            </div>`
             document.getElementById("Pdt").innerHTML += list;
             }
         })
