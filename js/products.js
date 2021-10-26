@@ -18,22 +18,19 @@ function LoadProdu(PRODUCTS_URL) {
        
         LoadProdu.forEach(element => {
             if(((PrecioMin == undefined) || (PrecioMin != undefined && parseInt(element.cost) >= PrecioMin)) &&// comparamos la el precio que tenemos en el listado de autos sea mayor o igual que el precio que indica el usuario.
-            ((PrecioMax == undefined) || (PrecioMax != undefined && parseInt(element.cost) <= PrecioMax))){  
-            let linea = "<br><hr><br>";
-        
-            let salto = "<br><br>";
+            ((PrecioMax == undefined) || (PrecioMax != undefined && parseInt(element.cost) <= PrecioMax))){ 
             
             let list = " ";
 
             list = 
-            `<div class="col-12 col-sm-6 mb-5 col-md-3 " style="width: 18rem;">
-            <div class="card" style="width: 18rem;">
-            <img src=" ` + element.imgSrc + ` " class="card-img-top" style="width: 18rem;">` + salto +`
+            `<div class="col-12 col-sm-6 col-md-3" style="width: 16rem;">
+            <div class="card" style="width: 16rem;">
+            <img src=" ` + element.imgSrc + ` " class="card-img-top" style="width: 16rem;">
                 <div class="card-body">  
-                    <a href="product-info.html"><button id="info-auto">Ver más</button></a> <br>
                     <p class="card-text">` + `<strong>Marca: </strong>` + element.name +`</p>
                     <p class="card-text">` + `<strong>Descripcion: </strong>`+ element.description + `</p>
                     <p class="card-text">` + `<strong>Precio: </strong>` + element.cost + `</p>
+                    <a href="product-info.html"><button id="info-auto" class="d-grid gap-2 col-6 mx-auto btn btn-danger">Ver más</button></a>
                 </div>
             </div>
             </div>`
@@ -90,39 +87,40 @@ LoadProdu(PRODUCTS_URL)
 
 });
 
-// function ordenamiento(orden, lista){
-//     let array = [];
-//     if(orden === "Asen"){
-//         array = lista.sort(
-//             function(a,b){
-//                 if(a.cost < b.cost){ return -1;}
-//                 if(a.cost > b.cost){ return 1; }
-//                 return 0;}
-//         );  
-//     }
-//     else if(orden === "Desen") {
-//         array = lista.sort(
-//             function(a,b){
-//                 if(a.cost < b.cost){return -1;}
-//                 if(a.cost > b.cost){ return 1; }
-//                 return 0;
-//             }
+
+let array = [];
+function ordenamiento(orden, lista){
+    if(orden === "asen"){
+        array = lista.sort(
+            function(a,b){
+                if(a.cost < b.cost){ return -1;}
+                if(a.cost > b.cost){ return 1; }
+                return 0;}
+        );  
+    }
+    else if(orden === "desen") {
+        array = lista.sort(
+            function(a,b){
+                if(a.cost < b.cost){return 1;}
+                if(a.cost > b.cost){ return -1; }
+                return 0;
+            }
             
-//         )
+        )
         
-//     }
+    }
 
-// }
+}
+document.addEventListener('click', function(e){
+    console.log(e.target.matches(".btn-outline-primary"))
+    document.getElementById("asen").value
+    document.getElementById("desen").value
 
-// document.getElementById("asen").addEventListener('click', function(){
-//     PRODUCTS_URL = ordenamiento("Asen", PRODUCTS_URL);
+   PRODUCTS_URL = ordenamiento("asen", PRODUCTS_URL);
+   PRODUCTS_URL = ordenamiento("desen", PRODUCTS_URL);
+   LoadProdu(PRODUCTS_URL);
+})
 
-//     LoadProdu(PRODUCTS_URL);
-// })
-// document.getElementById("desen").addEventListener('click', function(){
-//     PRODUCTS_URL = ordenamiento("Desen", PRODUCTS_URL);
-//     LoadProdu(PRODUCTS_URL);
-// })
 
 // let search = document.createElement("input");
 // search.setAttribute('type', "search");
