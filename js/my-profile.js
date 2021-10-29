@@ -2,8 +2,7 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-  infoUser="";
-  user="";
+
   document.getElementById("btn-enviar").addEventListener('click', function(){
     let name = document.getElementById("name")
     let age = document.getElementById("age")
@@ -16,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
       email: email.value,
       tel: tel.value
     }  
+    
     if(datosPerfil){
       localStorage.setItem('profile', JSON.stringify({user: datosPerfil}));
       console.log(datosPerfil, "estos son los datos")
