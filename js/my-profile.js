@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }  
     
     if(datosPerfil){
-      localStorage.setItem('profile', JSON.stringify({user: datosPerfil}));
+      let datosInputsGuardados = localStorage.setItem('profile', JSON.stringify({user: datosPerfil}));
       console.log(datosPerfil, "estos son los datos")
     }
         

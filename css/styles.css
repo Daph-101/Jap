@@ -176,3 +176,31 @@ a.custom-card:hover {
   float: left;
   text-align: center;
 }
+#boxSearch{
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+#boxSearch > i{
+font-size: 20px;
+color: rgb(224, 52, 52);
+}
+#boxSearch > input{
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-bottom: #20e2d7;
+  font-size: 18px;
+  padding-left: 10px;
+}
+.inputCantidad{
+  width: 150px;
+  border: none;
+  border-bottom: 2px solid #20e2d7;
+  outline: none;
+}

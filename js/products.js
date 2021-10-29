@@ -23,8 +23,8 @@ function LoadProdu(PRODUCTS_URL) {
             let list = " ";
 
             list = 
-            `<div class="col-12 col-sm-6 col-md-3" style="width: 16rem;">
-            <div class="card" style="width: 16rem;">
+            `<div class="col-8 col-sm-5 col-md-6 col-lg-3 " style="width: 16rem;">
+            <div class="card mb-md-3 m-lg-3 my-sm-5 m-2 ml-3" style="width: 16rem;">
             <img src=" ` + element.imgSrc + ` " class="card-img-top" style="width: 16rem;">
                 <div class="card-body">  
                     <p class="card-text">` + `<strong>Marca: </strong>` + element.name +`</p>

@@ -12,7 +12,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+    <link rel="icon" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
   </head>
   <body onload="LoadProdu(PRODUCTS_URL)">
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -24,35 +24,51 @@
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       </div>
     </nav>
-    <div class="container" >   
-      <div id="rangos" class="row position-relative button-100 start-50" >
-        Cantidad: 
-          <input type="number" name="number" min="1200" placeholder="min"> 
-          <input type="number" name="number" max="15200" placeholder="max">
-          <button id="asen" class="btn btn-outline-primary" type="text" name="text" style="margin-left: 10px;">A-Z</button>
-
-          <button class="btn btn-outline-primary"  id="desen" type="text" name="text" style="margin-left: 10px;">Z-A</button>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-          <input type="text" />
-      </div> 
-
-      <div class="row" id="Pdt"> 
+    <div class="container">
+      <div id="rangos" class="row ">
+        <div class="col-8 col-md-8 col-xl-12">
+          <div id="boxSearch" class="d-flex justify-content-start ">
+            <i class="fas fa-search"></i>
+            <input type="search" placeholder="Search" />
+          </div>
+          <div class="col-4 col-md-12 col-sm-6 mb-3 mt-3">
+            <label for="" class="">Cantidad: </label>
+            <input class="inputCantidad " type="number" name="number" min="1200" placeholder="min">
+            <input class="inputCantidad" type="number" name="number" max="15200" placeholder="max">
+          </div>
+          <div>
+            <button id="asen" class="btn btn-outline-info btn-sm ml-3" type="text" name="text">A-Z</button>
+            <button id="desen" class="btn btn-outline-info btn-sm" type="text" name="text">Z-A</button>    
+          </div>
+  
+        </div>  
     </div>
-    
-    <footer class="text-muted bg-light">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+
+      <div class="row" id="Pdt">
       </div>
-    </footer>
-    <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/products.js"></script>
-    <script src="js/product-info.js"></script>
-  </body>
-</html>
+
+      <footer class="text-muted bg-light">
+        <div class="container">
+          <p class="float-right">
+            <a href="#" >Volver arriba</a>
+          </p>
+          <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+          <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        </div>
+      </footer>
+      <div id="spinner-wrapper">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/init.js"></script>
+      <script src="js/products.js"></script>
+      <script src="js/product-info.js"></script>
+      </body>
+
+      </html>
