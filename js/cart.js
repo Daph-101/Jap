@@ -28,7 +28,7 @@
                         <input type="number" class="h6 w-100" placeholder="Cantidad: ${item.count}"></input>
                         <p class="h6 w-100">Precio: ${item.currency} ${item.unitCost}</p>
                         <p id="tott" class="h6 w-100">Total: $</p>
-                        <button type="button" class="btn btn-outline-danger bd-highlight mt-4 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">enviar</button>
+                        <button type="button" class="btn btn-outline-danger bd-highlight mt-4 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Metodos de pagos</button>
                       </div>
                     </div>
                 </article>
