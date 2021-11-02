@@ -28,6 +28,12 @@
         font-size: 3.5rem;
       }
     }
+    select{
+      width: 100%;
+
+      border: none;
+      outline: none;
+    }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -50,6 +56,7 @@
         </div>
     </div>
   </nav>
+
   <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -77,7 +84,7 @@
                 <ol><label for="">Ciudad</label>
                   <select name="" id="" class="w-50">
                      <option value="">Artigas</option>
-                     <option value=""> Canelones</option>
+                     <option value="">Canelones</option>
                      <option value="">Cerro Largo</option>
                      <option value="">Colonia</option> 
                      <option value="">Durazno</option>
@@ -116,7 +123,48 @@
         <h1 class="h4 py-2 d-none d-md-inline-block">Carrito de Compras 🛒</h1>
       </div>
     </div>
-
+    <form class="row g-3">
+      <div class="col-md-4">
+        <label for="validationServer01" class="form-label">Dirección</label>
+        <input type="text" class="form-control is-valid" id="validationServer01" value="" required placeholder="Calle">
+        <input type="number" class="form-control is-valid" id="validationServer01" value="" required placeholder="Número">
+        <input type="text" class="form-control is-valid" id="validationServer01" value="" required placeholder="Esquina">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-3">
+        <label for="validationServer04" class="form-label">País</label>
+        <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+          <option selected disabled value="">Uruguay</option>
+          <option selected disabled value="">Brasil</option>
+          <option selected disabled value="">Paraguay</option>
+          <option selected disabled value="">Argentina</option>
+          <option selected disabled value="">Chile</option>
+          <option selected disabled value="">Venezuela</option>
+          <option selected disabled value="">Bolivia</option>
+          <option selected disabled value="">Colombia</option>
+          <option selected disabled value="">Perú</option>
+          <option selected disabled value="">Ecuador</option>
+          <option elected disabled value="">Guyana</option>
+        </select>  
+        <div id="validationServer04Feedback" class="invalid-feedback">
+          Please select a valid state.
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+         
+          <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+          <p>Tipo de envío:</p>
+          <label class="form-check-label" for="invalidCheck3">
+            Premium (2-5 días) - Costo del 15% sobre el subtotal.
+          </label>
+          <div id="invalidCheck3Feedback" class="invalid-feedback">
+            You must agree before submitting.
+          </div>
+        </div>
+      </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

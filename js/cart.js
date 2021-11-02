@@ -1,6 +1,9 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+// let preUnit = document.getElementById('precio');
+// let cantidad = document.getElementById('cantidad');
+// let subtotal = document.getElementById('subTotal');
 
  document.addEventListener("DOMContentLoaded", function(e){
    
@@ -25,9 +28,9 @@
                       <img class="rounded float-start w-50 h-50 pt-3" src="${item.src}">
                       <div class="p-2 w-100 ">
                         <p class="h6 w-100 ">${item.name}</p>
-                        <input type="number" class="h6 w-100" placeholder="Cantidad: ${item.count}"></input>
-                        <p class="h6 w-100">Precio: ${item.currency} ${item.unitCost}</p>
-                        <p id="tott" class="h6 w-100">Total: $</p>
+                        <input type="number" class="h6 w-100" id="cantidad" onChange="multiplicar()" placeholder="Cantidad: ${item.count}"></p>
+                        <p class="h6 w-100" id="precio" onChange="multiplicar()">Precio: ${item.currency} ${item.unitCost}</p>
+                        <p id="subTotal" class="h6 w-100">SubTotal: $</p>
                         <button type="button" class="btn btn-outline-danger bd-highlight mt-4 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Metodos de pagos</button>
                       </div>
                     </div>
@@ -35,25 +38,42 @@
               </div>
             </div>
           </div>` ;
-        
+          
         document.getElementById("info").innerHTML += body;
-        
+       
         })
+        multiplicar()
+        
+        
         })
         .catch(error => console.log(error))
         }
   
         Comen()
+
+      
         
 })   
 
 
-function total(){
-  let preUnit = parseInt(item.currency)
-  let cantidad = parseInt(item.count)
-  let total = Math.round(preUnit*cantidad)
+function multiplicar(){
+  let preUnit = parseInt(`${item.unitCost}`)
+  let cantidad = parseInt(`${item.count}`)
+  let subtotal = preUnit*cantidad
 
+  // console.log(parseInt(document.getElementById("subTotal").value))
+  subtotal.innerText = subtotal
+}   
+
+// function multiplicar(){
+
+//   let cantidad = document.getElementById('cantidad');
+//   let preUnit = document.getElementById('precio');
+//   let subtotal = document.getElementById('subTotal');
+
+//   for(let i = 0; i < cantidad.length; i++){
+//     subtotal[i].value = cantidad[i].value * preUnit[i].value;
+//     subtotal.innerText = preUnit * cantidad
+//   }
   
-  console.log(parseInt(document.getElementById("tott").value))
-  total.innerHTML= preUnit * cantidad
-}
+// }
