@@ -31,7 +31,7 @@
                         <input type="number" class="h6 w-100" id="cantidad" onChange="multiplicar()" placeholder="Cantidad: ${item.count}"></p>
                         <p class="h6 w-100" id="precio" onChange="multiplicar()">Precio: ${item.currency} ${item.unitCost}</p>
                         <p id="subTotal" class="h6 w-100">SubTotal: $</p>
-                        <button type="button" class="btn btn-outline-danger bd-highlight mt-4 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Metodos de pagos</button>
+                        
                       </div>
                     </div>
                 </article>
@@ -51,8 +51,6 @@
   
         Comen()
 
-      
-        
 })   
 
 
@@ -77,3 +75,26 @@ function multiplicar(){
 //   }
   
 // }
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }else{
+          alert('El formulario se envio correctamente');
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
