@@ -5,6 +5,33 @@
 // let cantidad = document.getElementById('cantidad');
 // let subtotal = document.getElementById('subTotal');
 
+//variables del modal
+let exampleModal = document.getElementById('exampleModal');
+let input = document.getElementById('inp');
+let btnEnviar = document.getElementById('enviar');
+// variables para formulario
+let formulario = document.getElementById('formulario');
+let nombre = document.getElementById('nombre');
+let apellido = document.getElementById('apellido');
+let email = document.getElementById('email');
+let direccionCalle = document.getElementById('direccionCalle');
+let direccionNum = document.getElementById('direccionNum');
+let direccionEsq = document.getElementById('direccionEsq');
+let pais = document.getElementById('pais');
+let ciudad = document.getElementById('ciudad');
+let EnvioPremium = document.getElementById('EnvioPremium');
+
+//expresion regular acepta solo minuscula 'marta@menta.com'
+let exRegEmail = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
+let exRegNombre = /^[a-zA-Z ]*$/;
+let exRegNum = /[a-z]/gi;
+//alertas
+let alertSuccess = document.getElementById('alertSuccess');
+let alertNombre = document.getElementById('alertNombre');
+let alertApellido = document.getElementById('alertApellido');
+let alertEmail = document.getElementById('alertEmail');
+
+
  document.addEventListener("DOMContentLoaded", function(e){
    
     function Comen(){
@@ -42,26 +69,26 @@
         document.getElementById("info").innerHTML += body;
        
         })
-        multiplicar()
+        // multiplicar()
         
         
         })
         .catch(error => console.log(error))
         }
-  
+       
         Comen()
 
 })   
 
 
-function multiplicar(){
-  let preUnit = parseInt(`${item.unitCost}`)
-  let cantidad = parseInt(`${item.count}`)
-  let subtotal = preUnit*cantidad
+// function multiplicar(){
+//   let preUnit = parseInt(`${item.unitCost}`)
+//   let cantidad = parseInt(`${item.count}`)
+//   let subtotal = preUnit*cantidad
 
-  // console.log(parseInt(document.getElementById("subTotal").value))
-  subtotal.innerText = subtotal
-}   
+//   // console.log(parseInt(document.getElementById("subTotal").value))
+//   subtotal.innerText = subtotal
+// }   
 
 // function multiplicar(){
 
@@ -76,25 +103,102 @@ function multiplicar(){
   
 // }
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-  'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
+// // Example starter JavaScript for disabling form submissions if there are invalid fields
+// (function () {
+//   'use strict'
 
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }else{
-          alert('El formulario se envio correctamente');
-        }
+//   // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//   var forms = document.querySelectorAll('.needs-validation')
 
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
+//   // Loop over them and prevent submission
+//   Array.prototype.slice.call(forms)
+//     .forEach(function (form) {
+//       form.addEventListener('submit', function (event) {
+//         if (!form.checkValidity()) {
+//           event.preventDefault()
+//           event.stopPropagation()
+//         }else{
+//           alert('El formulario se envio correctamente');
+//         }
+
+//         form.classList.add('was-validated')
+//       }, false)
+//     })
+// })()
+
+function mostrarMensajeExito(){
+  alertSuccess.classList.remove('d-none')
+  alertSuccess.innerHTML = " Mensaje enviado con éxito😉!"
+}
+
+function validandoFormulario(){
+  formulario.addEventListener('submit', function(e){
+
+    // console.log(nombre.value, '🇸🇷 ');
+    // console.log(apellido.value, '📛');
+
+    alertSuccess.classList.add('d-none');
+    
+
+    if (!formulario.checkValidity()) {
+      e.preventDefault()
+      e.stopPropagation()
+      
+    }
+    if (!exRegEmail.test(email.value) || !email.value.trim() ){
+     // console.log("formato de email no válido");
+      email.classList.add("is-invalid")
+    }else{
+      email.classList.remove('is-invalid')
+      email.classList.add("is-valid") 
+     
+    }
+    if (!exRegNombre.test(nombre.value) || !nombre.value.trim()){
+      //console.log("Nombre en formato invalido");
+      nombre.classList.add("is-invalid")
+    }else{
+      nombre.classList.remove("is-invalid")
+      nombre.classList.add("is-valid") 
+    }
+    if (!exRegNombre.test(apellido.value) || !apellido.value.trim()){
+      apellido.classList.add("is-invalid")
+    }else{
+      apellido.classList.remove("is-invalid")
+      apellido.classList.add("is-valid")
+    }
+    if (exRegNum.test(direccionCalle.value)){
+      direccionCalle.classList.add("is-invalid")
+    }else{
+      direccionCalle.classList.remove("is-valid")
+      direccionCalle.classList.add("is-invalid")
+      
+    }
+    if (!exRegNombre.test(direccionEsq.value) || !direccionEsq.value.trim()){
+      direccionEsq.classList.add("is-invalid")
+    }else{
+      direccionEsq.classList.remove("is-valid")
+      direccionEsq.classList.add("is-invalid")
+    }
+    if (!exRegNum.test(direccionNum.value)){
+      direccionNum.classList.add("is-invalid")
+    }else{
+      direccionNum.classList.remove("is-invalid")
+      direccionNum.classList.add("is-valid")
+    }
+
+    if (pais.value === null){
+      pais.classList.add("is-invalid")
+    }else{
+      pais.classList.remove("is-invalid")
+    pais.classList.add("is-valid")
+  }
+   if (this.classList.add("is-valid")=== true){
+    console.log('formulario enviado 😁 ');
+    mostrarMensajeExito()
+   } 
+    
+  })
+
+}
+validandoFormulario();
