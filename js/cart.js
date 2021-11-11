@@ -187,18 +187,21 @@ function validandoFormulario(){
       direccionNum.classList.add("is-valid")
     }
 
-    if (pais.value === null){
-      pais.classList.add("is-invalid")
-    }else{
-      pais.classList.remove("is-invalid")
-    pais.classList.add("is-valid")
-  }
    if (this.classList.add("is-valid")=== true){
     console.log('formulario enviado 😁 ');
     mostrarMensajeExito()
    } 
-    
+   pais.setCustomValidity("is-invalid")
+   pais.addEventListener("input", ()  =>{
+     if(pais.value === true){
+       pais.setCustomValidity("is")
+     }else {
+       pais.setCustomValidity("is-invalid")
+     }
+   })
   })
 
 }
 validandoFormulario();
+
+
