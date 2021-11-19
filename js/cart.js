@@ -1,9 +1,8 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-// let preUnit = document.getElementById('precio');
-// let cantidad = document.getElementById('cantidad');
-// let subtotal = document.getElementById('subTotal');
+
+
 
 //variables del modal
 let exampleModal = document.getElementById('exampleModal');
@@ -25,12 +24,6 @@ let EnvioPremium = document.getElementById('EnvioPremium');
 let exRegEmail = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
 let exRegNombre = /^[a-zA-Z ]*$/;
 let exRegNum = /[a-z]/gi;
-//alertas
-let alertSuccess = document.getElementById('alertSuccess');
-let alertNombre = document.getElementById('alertNombre');
-let alertApellido = document.getElementById('alertApellido');
-let alertEmail = document.getElementById('alertEmail');
-
 
  document.addEventListener("DOMContentLoaded", function(e){
    
@@ -80,52 +73,6 @@ let alertEmail = document.getElementById('alertEmail');
 
 })   
 
-
-// function multiplicar(){
-//   let preUnit = parseInt(`${item.unitCost}`)
-//   let cantidad = parseInt(`${item.count}`)
-//   let subtotal = preUnit*cantidad
-
-//   // console.log(parseInt(document.getElementById("subTotal").value))
-//   subtotal.innerText = subtotal
-// }   
-
-// function multiplicar(){
-
-//   let cantidad = document.getElementById('cantidad');
-//   let preUnit = document.getElementById('precio');
-//   let subtotal = document.getElementById('subTotal');
-
-//   for(let i = 0; i < cantidad.length; i++){
-//     subtotal[i].value = cantidad[i].value * preUnit[i].value;
-//     subtotal.innerText = preUnit * cantidad
-//   }
-  
-// }
-
-
-// // Example starter JavaScript for disabling form submissions if there are invalid fields
-// (function () {
-//   'use strict'
-
-//   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//   var forms = document.querySelectorAll('.needs-validation')
-
-//   // Loop over them and prevent submission
-//   Array.prototype.slice.call(forms)
-//     .forEach(function (form) {
-//       form.addEventListener('submit', function (event) {
-//         if (!form.checkValidity()) {
-//           event.preventDefault()
-//           event.stopPropagation()
-//         }else{
-//           alert('El formulario se envio correctamente');
-//         }
-
-//         form.classList.add('was-validated')
-//       }, false)
-//     })
-// })()
 
 function mostrarMensajeExito(){
   alertSuccess.classList.remove('d-none')
